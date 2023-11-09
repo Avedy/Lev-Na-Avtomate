@@ -1,4 +1,4 @@
-1) Webservak
+*1) Webservak*
 
 1. Качаем nginx
 2. Меняем в /etc/php-fpm.d/www.conf user и group на nginx
@@ -10,7 +10,8 @@
 8. Запускаем Nginx 
 9. Первый пацанчик готов.
 
-2) PGbratok
+*2) PGbratok*
+ 
 1. Качаем PostgreSQL
 2. Ставим listen_addresses = '8' в nano /var/lib/pgsql/14/data/postgresql.conf
 3. В nano /var/lib/pgsql/14/data/pg_hba.conf добавляем строку ip-шника сервака
@@ -18,4 +19,7 @@
 5. Качаем и распаковываем БД файл в БДшку нашу 
 6. Ставим пароль на БДшку
 7. Отключаем SeLinux
-8. Рестартим все системы в PG и Web, чтобы наверняка и видим вот это вот:
+8. Рестартим все системы в PG и Web, чтобы наверняка и видим вот это вот:![изображение](https://github.com/Avedy/Lev-V-Cirke-Na-Avtomate/assets/113580341/e088d669-3b61-420e-9a05-cca16f2276a4)
+
+
+*Всем спасибо за просмотор, всем удачи и всем пока пока.*
