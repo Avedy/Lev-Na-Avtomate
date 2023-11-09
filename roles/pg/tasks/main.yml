@@ -52,7 +52,7 @@
   become_user: root
   
 - name: Init database demo
-  shell: "PGPASSWORD='password' psql -U postgres -h 192.168.11.90 -d demo -f /var/lib/pgsql/demo-small-20170815.sql"
+  shell: "PGPASSWORD='password' psql -U postgres -h 192.168.11.90 -f /var/lib/pgsql/demo-small-20170815.sql"
 
 - name: Disable SElinux
   copy:
