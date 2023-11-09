@@ -1,14 +1,14 @@
 ---
 # tasks file for web
 
-- name: Install software
-  yum:
-    name: 
-      - epel-release
-      - http://rpms.remirepo.net/enterprise/remi-release-7.rpm
-      - nano
-      - net-tools
-    state: present
+# - name: Install software
+#   yum:
+#     name: 
+#       - epel-release
+#       - http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+#       - nano
+#       - net-tools
+#     state: present
     
 - name: Install nginx from repo
   yum:

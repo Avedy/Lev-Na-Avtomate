@@ -1,13 +1,13 @@
 ---
 # tasks file for pg
 
-- name: Connect to .rpm PostgreSQL
-  yum:
-    name:
-      - epel-release
-      - https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
-    validate_certs: no
-    state: present
+# - name: Connect to .rpm PostgreSQL
+#   yum:
+#     name:
+#       - epel-release
+#       - https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+#     validate_certs: no
+#     state: present
 
 - name: Install PostgreSQL
   yum:
@@ -23,7 +23,7 @@
   tags:
     - initdb
   ignore_errors: True
-  
+
 - name: Replace postgresql.conf
   copy:
     src: postgresql.conf
@@ -52,9 +52,8 @@
   become_user: root
   
 - name: Init database demo
-  command: "psql -f /var/lib/pgsql/demo-small-20170815.sql"
-  become_user: postgres
-  
+  shell: "PGPASSWORD='password' psql -U postgres -h 192.168.11.90 -d demo -f /var/lib/pgsql/demo-small-20170815.sql"
+
 - name: Disable SElinux
   copy:
     src: config
